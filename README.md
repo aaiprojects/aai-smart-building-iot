@@ -11,13 +11,13 @@ Thomas Geraci
 
 ## Project Overview
 We use the Bristol Smart Building IoT dataset (temperature, humidity, light, RSSI) to build a preprocessing pipeline and two forecasting models:
-- LSTM (Deep Learning) for one-step-ahead temperature prediction
-- Random Forest Regressor for one-step-ahead humidity prediction
+- **LSTM (Deep Learning)** for **one-step-ahead temperature prediction**
+- **Random Forest Regressor** for **one-step-ahead humidity prediction**
 
 The notebook also exports a combined CSV that can be used directly in Tableau for actual vs predicted visuals and error monitoring.
 
 ## Repository Contents
-- Main notebook: `Team_6_Final Team Project Machine Learning IoT Application Design and Implementation_...ipynb`
+- Main notebook: `Team_6_Final Team Project Machine Learning IoT Application Design and Implementation.ipynb`
 - `README.md`
 - `.gitignore`
 
@@ -42,12 +42,14 @@ If needed, add your dataset folder name to `.gitignore`.
 3. Confirm preprocessing, model training, and evaluation complete without errors.
 
 ## Tableau Output (CSV)
-When the notebook finishes, it saves a Tableau-ready CSV in the project’s processed output folder.
+When the notebook finishes, it saves a Tableau-ready CSV to:
+
+- `data/processed/tableau_predictions.csv`
 
 The exported table includes:
 - `timestamp`
-- temperature: actual, predicted, absolute error
-- humidity: actual, predicted, absolute error
+- temperature: `actual_temperature`, `pred_temperature`, `temp_abs_error`
+- humidity: `actual_humidity`, `pred_humidity`, `humidity_abs_error`
 
 Use this CSV in Tableau to create:
 - Actual vs predicted time-series lines
@@ -63,8 +65,7 @@ Typical environment:
 - numpy, pandas, matplotlib
 - scikit-learn
 - tensorflow / keras
-- seaborn
 
 Install (example):
 ```bash
-pip install numpy pandas matplotlib scikit-learn tensorflow seaborn
+pip install numpy pandas matplotlib scikit-learn tensorflow
