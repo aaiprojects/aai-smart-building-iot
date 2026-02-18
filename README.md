@@ -30,7 +30,7 @@ The notebook also exports a combined CSV that can be used directly in Tableau fo
 
 ---
 
-## Dataset (Bristol Smart Building IoT — Local Setup Required)
+## Dataset (Bristol Smart Building IoT: Local Setup Required)
 The Bristol dataset is **not included** in this repository due to its size (~2.2 GiB).  
 To reproduce results, the instructor (or any user) must **download and extract the dataset locally**, then update the dataset path in the notebook.
 
@@ -52,7 +52,13 @@ To reproduce results, the instructor (or any user) must **download and extract t
 > The notebook searches within `LOCAL_DATA_DIR` for `.csv` files (including inside subfolders).  
 > If no CSVs are detected, adjust `LOCAL_DATA_DIR` to the correct extracted folder level.
 
-### Do Not Upload to GitHub
+### Optional: ZIP / Google Drive Fallback
+If your environment uses the notebook’s ZIP-based fallback download (e.g., Google Drive), install `gdown` and follow the notebook prompts/cell instructions.  
+This option is useful when local extraction paths differ across machines.
+
+---
+
+## Do Not Upload to GitHub
 Please do not commit:
 - The raw dataset folder (thousands of CSVs)
 - Any dataset ZIP files (e.g., ~2.2 GiB download)
@@ -87,6 +93,11 @@ Use this CSV in Tableau to create:
 
 ---
 
+## Notes on Contributions
+- Dataset download / ZIP fallback setup (including Google Drive download support) and related reproducibility improvements contributed by **Santosh Kumar**.
+
+---
+
 ## Notes on AI Tool Disclosure
 AI-assisted tools were used for debugging support, sanity-checking intermediate outputs, and validating that the Tableau export structure is correct. All code and results were reviewed, executed, and validated by the team.
 
@@ -96,9 +107,11 @@ AI-assisted tools were used for debugging support, sanity-checking intermediate 
 Typical environment:
 - Python 3.9+
 - numpy, pandas, matplotlib
+- seaborn
 - scikit-learn
 - tensorflow / keras
+- gdown (only needed for optional Google Drive download fallback)
 
 Install (example):
 ```bash
-pip install numpy pandas matplotlib scikit-learn tensorflow
+pip install numpy pandas matplotlib seaborn scikit-learn tensorflow gdown
